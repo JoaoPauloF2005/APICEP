@@ -7,7 +7,7 @@ use Exception;
 
 class EnderecoController extends Controller
 {
-    public static function getCepByLogradouro() : void
+    public static function getCepByLogradouro () : void
     {
 
     }
@@ -16,5 +16,20 @@ class EnderecoController extends Controller
     {
 
     }
-}
+
+    public static function getLogradouroByCep () : void
+    {
+
+    }
+
+     public static function getBairrosByIdCidade () : void
+     {
+
+     }
+
+     public static function getCidadesByUf () : void
+     {
+        
+     }
+} 
  
