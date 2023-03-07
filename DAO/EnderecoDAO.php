@@ -38,4 +38,15 @@ class EnderecoDAO extends DAO
 
         return $stmt->fetchAll(DAO::FETCH_CLASS);
     }
+
+    public function selectCidadesByUf($uf)
+    {
+        $sql = "SELECT * FROM cidade WHERE uf = ? ORDER BY descricao ";
+
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, $uf);
+        $stmt->execute();
+
+        return $stmt->fetchAll(DAO::FETCH_CLASS);
+    }
 }
