@@ -1,5 +1,7 @@
 <?php
 
+namespace ApiCep\DAO;
+
 use Exception;
 use \PDO;
 USE PDOException;           
