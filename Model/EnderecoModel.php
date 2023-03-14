@@ -24,4 +24,31 @@ class EnderecoModel extends Model
             throw $e;
         }
     }
+
+    public function getLogradouroByCep(int $cep)
+    {
+        try{
+
+            $dao = new EnderecoDAO();
+            return $dao->selectByCep($cep);
+
+        }catch(Exception $e){
+            throw $e;
+        }
+    }
+
+    public function getBairrosByIdCidade(int $id_cidade)
+    {
+    try 
+    {
+        $dao = new EnderecoDAO();
+
+        $this->rows = $dao->selectBairrosByIdCidade($id_cidade);
+
+    }catch(Exception $e) {
+
+    echo $e->getMessage();
+
+    }
+  }
 }
