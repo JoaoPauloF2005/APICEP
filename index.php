@@ -8,7 +8,6 @@
 
  // var_dump($cidades);
 
- use ApiCep\Controller;
 
  include 'Controller/Controller.php';
 

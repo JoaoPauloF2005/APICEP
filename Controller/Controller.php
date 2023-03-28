@@ -18,7 +18,7 @@ abstract class Controller
    
    protected static function setResponseJSON ($data, $request_status = true)
    {
-      $response = array('response_data' => $data, 'response_sucessful' => request_status);
+      $response = array('response_data' => $data, 'response_sucessful' => $request_status);
       
       header("Access-Control-Allow-Origin: ");
       header("Content-type: application/json; charset=utf-8");
@@ -26,7 +26,7 @@ abstract class Controller
       header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
       header("Programa: public");
 
-      exit(json_encode($Response));
+      exit(json_encode($response));
    }
 
    protected static function getExceptionAsJSON(Exception $e)
@@ -80,6 +80,9 @@ abstract class Controller
 
       if(!empty($var_get))
       return(string) $var_get;
+
+      else
+      throw new Exception(("Variavel $var_name não identificada."));
    }
 
    
